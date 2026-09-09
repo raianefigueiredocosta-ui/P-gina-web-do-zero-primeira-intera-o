@@ -1,24 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>blog</title>
-  <style>
-    header
-    
+<html lang="pt-br">
 
-  </style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        header {
+            background-color: #FBECF6;
+            color: #8F7814;
+            text-align: center;
+            max-width: 830px;
+            margin: 0 auto;
+            border: 4px solid #8F7814;
+            padding: 16px;
+        }
+
+        main {
+            background-color: #f6d0fd;
+            color: #8F7814;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 2px solid #8F7814;
+            padding: 16px;
+        }
+
+        article {
+            display: flex;
+            gap: 16px;
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #ffffff;
+            border: 1px solid #8F7814;
+            border-radius: 4px;
+            padding: 4px 8px;
+            margin-right: 4px;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <h1>meu blog tech</h1>
-    <p>vou compartilhar conhecimentos sobre tecnologia e programação</p>
-  </header>
-  <main>
-    <h2>meu primeiro post</h2>
-    <p>boas-vindas ao meu novo blog! aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia </p>
-  </main>
+    <header>
+        <h1>Blog.Da.Rai</h1>
+        <p>Perfil voltado para garotas que buscam ser sua melhor versão</p>
+    </header>
+
+    <main>
+        <article>
+            <img src="blog.png"
+                alt="Ilustração de penteadeira rosa com a frase 'Blog da Thai' escrita no espelho iluminado.">
+            <div>
+                <h2>Meu Primeiro Post</h2>
+                <p class="artigo-autor">Por: Thais Tonon</p>
+                <p>Oi, meninas! Sejam muito bem-vindas ao nosso Blog conforto!
+                    Aqui é o lugar perfeito para
+                    compartilhar ideias, ficar por dentro das novidades,
+                    se inspirar e, claro, colocar você em primeiro lugar!</p>
+                <button>❤️ <span>0</span></button>
+                <button>💬 <span>0</span></button>
+                <button>🔁 <span>0</span></button>
+            </div>
+        </article>
+
+        <article>
+            <img src="img2.png"
+                alt="Gatinha branca fofa usando um laço rosa com a frase Autocuidado para as Gatas, rodeada por corações e mensagens positivas.">
+            <div>
+                <h2>Meu Segundo Post</h2>
+                <p class="artigo-autor">Por: Raiane Figueiredo</p>
+                <p>Oiii migas! Fiquem atentas, pois, no próximo post vocês vão encontrar
+                    novidades do mundo da beleza, indicações de produtos e explicações
+                    MARAVILHOSAS! Tudo isso e muito mais aqui no seu blog favorito, feito
+                    sempre com amor, pensando em seu bem estar e conforto!</p>
+                <button>❤️ <span>0</span></button>
+                <button>💬 <span>0</span></button>
+                <button>🔁 <span>0</span></button>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        const botoes = document.querySelectorAll("button");
+
+        botoes.forEach(function (botao) {
+            let curtiu = false;
+
+            botao.addEventListener("click", function () {
+                let texto = botao.querySelector("span");
+               
+                if (curtiu === false) {
+                    texto.textContent = Number(texto.textContent) + 1;
+                    curtiu = true;
+                } else {
+                    texto.textContent = Number(texto.textContent) - 1;
+                    curtiu = false;
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
